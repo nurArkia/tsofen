@@ -15,8 +15,9 @@ import java.util.List;
 public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.MyViewHolder> {
 
     private List<Lesson> LessonsList;
+    private  ItemClickListener itemClickListener;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView subject, title, date,teacher;
 
         public MyViewHolder(View view) {
@@ -26,6 +27,13 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.MyViewHold
             date = (TextView) view.findViewById(R.id.date);
             teacher = (TextView) view.findViewById(R.id.teacher);
 
+        }
+
+        @Override
+        public void onClick(View view) {
+            if ( itemClickListener!=null){
+                itemClickListener.onClick(view,getAdapterPosition());
+            }
         }
     }
 
@@ -55,5 +63,8 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.MyViewHold
     @Override
     public int getItemCount() {
         return LessonsList.size();
+    }
+    public void setItemClickListener(ItemClickListener itemClickListener){
+        this.itemClickListener=itemClickListener;
     }
 }
