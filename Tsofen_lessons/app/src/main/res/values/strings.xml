@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Tsofen_lessons</string>
+    <string name="main_fragment">Main</string>
+    <string name="add_fragment">add</string>
+    <string name="remove_fragment">remove</string>
+    <string name="replce_fragment">replce</string>
+    <string name="asynctask_add_image">asynctask add image</string>
+    <string name="picasso_add_image">add image with picasso</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
